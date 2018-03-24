@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    background-color: #cc0042;
+    flex: 1 1 200px;
+}
+
+.middle{
+    background-color: #b20039;
+}

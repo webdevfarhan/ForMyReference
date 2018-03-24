@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transitions</title>
+    <style>
+        .box{
+            background-color: rgba(136, 35, 136, 0.616);
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            margin: auto;
+            text-align: center;
+            color: white;
+            line-height: 200px;
+        }
+        .box:hover{
+            /* background-color:palegreen; */
+            /* transform: scale(1.2) rotate(45deg); */
+            transform: translateX(300px);
+            background-color: teal;
+        }
+        .animated{
+            /* transition-duration: 5s, 2s;
+            transition-property: background-color, transform;
+            transition-delay: 3s; 
+            transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); */
+            transition: transform 2s ease-out 0s, background-color 2s ease-out 0s;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">BORING</div><br><br><br>
+    <div class="animated box">ANIMATED</div>
+</body>
+</html>

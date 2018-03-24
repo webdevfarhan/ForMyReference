@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Gallery</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: rgb(44, 44, 99);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        div.item {
+            position: relative;
+            float: left;
+            overflow: hidden;
+            margin: 10px 1%;
+            min-width: 220px;
+            max-width: 310px;
+            background: #000000;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+            max-height: 350px;
+        }
+
+        div.item * {
+            box-sizing: border-box;
+            transition: all 0.35s ease-in-out;
+        }
+
+        div.item img {
+            max-width: 100%;
+            vertical-align: top;
+            height: 210px;
+        }
+
+        div.item i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            font-size: 34px;
+            color: #000000;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            background: #ffffff;
+        }
+
+        div.item a {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            position: absolute;
+        }
+
+        div.item:hover img {
+            opacity: 0.3;
+            filter: grayscale(100%);
+        }
+
+        div.item * {
+            transition: all 0.5s ease-in-out;
+        }
+
+        div.item i{
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        div.item:hover i{
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+    <script src="fb72a67e96.js"></script>
+</head>
+
+<body>
+    <h1>An Image Gallery</h1>
+    <div class="container">
+        <div class="item blue">
+            <img src="1.jpg" alt="">
+            <i class="fa fa-camera"></i>
+            <a href="http://google.com"></a>
+        </div>
+        <div class="item blue">
+            <img src="2.jpg" alt="">
+            <i class="fa fa-paw"></i>
+            <a href="http://google.com"></a>
+        </div>
+        <div class="item blue">
+            <img src="3.jpg" alt="">
+            <i class="fa fa-cloud"></i>
+            <a href="http://google.com"></a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+body, html{
+    padding: 0;
+    margin: 0;
+}
+#sidebarContainer{
+    display: flex;
+    height: 100vh;
+    width: 15vw;
+    background-color: rgba(50, 67, 142, 0.82);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#topFlexItems{
+    
+}
+
+#bottomFlexItems{
+    
+}
+
+.flexItem{
+    margin: 3px;
+    padding: 2px;
+    color: white;
+}

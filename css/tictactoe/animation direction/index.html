@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animation Direction</title>
+    <style>
+        .box{
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            border-radius: 20px;
+            /* animation-name: slideRight;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-duration: 2s; */
+            background-color: blueviolet;
+            height: 100px;
+            width: 100px;
+        }
+
+        .box1:hover{
+            animation-play-state: paused;
+        }
+
+        .box1{
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            border-radius: 20px;
+            animation-name: slideRight;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            background-color: blueviolet;
+            height: 100px;
+            width: 100px;
+        }
+
+        .box:hover{
+            animation-delay: 0s;
+            animation-duration: 2s;
+            animation-name: hoverbox;
+        }
+         
+        #forward{
+            animation-fill-mode: forwards; //stays red in the end
+            animation-direction: normal;
+        }
+        #backward{
+            animation-direction: reverse;
+        }
+        #alternate{
+            animation-direction: alternate;
+        }
+
+        @keyframes slideRight {
+            0%{
+                transform: translateX(200px);
+            }
+            100%{
+                background-color: red;
+            }
+        }
+        @keyframes hoverbox {
+            0%{
+                background-color: blueviolet;
+            }
+            100%{
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" id="backward"></div><br>
+    <div class="box1" id="alternate"></div><br>
+    <div class="box" id="forward">Stays red</div><br>
+    <div class="box"></div>
+</body>
+</html>

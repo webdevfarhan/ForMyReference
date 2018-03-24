@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="./app/index.js"></script>
+    <title>Basic Application</title>
+</head>
+
+<body>
+
+    <div ng-app="basicApp">
+        <div ng-controller="controllerTop">{{user}}</div>
+        <div ng-controller="controllerBottom">{{user.name}} -- {{lastname}}</div>
+    </div>
+<script>
+    app.controller("controllerTop", function($scope, $rootScope){
+        $rootScope.user = {
+            name: "Farhannnnnn",
+            lastname: "Madani"
+        };
+    });
+//with rootscope value of variable user will be changed
+    app.controller("controllerBottom", function($scope){
+        var user = {
+            name: "Farhan1",
+            lastname: "Madani1"
+        };
+    });
+</script>
+</body>
+
+</html>

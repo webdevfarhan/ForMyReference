@@ -1,0 +1,27 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.box{
+    /* width: 300px; */
+    flex-basis: 200px; 
+    flex-grow: 1; /*expanded to remaining width*/
+    line-height: 300px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+.box1{
+    background-color: rgb(80, 80, 199);
+}
+.box2{
+    background-color: rgb(180, 52, 52);
+    flex-grow: 2;  /*expanded to remaining width, its not 2 times*/
+}
+.box3{
+    background-color: rgb(184, 73, 92);
+}
+.box4{
+    background-color: rgb(105, 189, 105);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+    "use strict"
+    var app = angular.module("basicApp", []);
+    </script>
+    <title>Basic Application</title>
+</head>
+
+<body>
+
+    <div ng-app="basicApp">
+        <div ng-controller="controllerTop">{{user}}</div>
+        <div ng-controller="controllerBottom">
+            {{user.firstname}} -- {{lastname}}
+            <br/>
+            <br/>
+            <br/>
+            <!-- On rows -->
+            <table class="table table-striped">
+                <tr>
+                    <td class="info">Name</td>
+                    <td class="success">Surname</td>
+                </tr>
+                <tr ng-repeat="user in userArray">
+                    <td>{{user.name}}</td>
+                    <td>{{user.surname}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        app.controller("controllerTop", function ($scope, $rootScope) {
+            $rootScope.user = {
+                name: "Farhannnnnn",
+                lastname: "Madani"
+            };
+        });
+        //with rootscope value of variable user will be changed
+        app.controller("controllerBottom", function ($scope) {
+            var user = {
+                name: "Farhan1",
+                lastname: "Madani1"
+            };
+            var users = [
+                { name: "Farhan", surname: "Madani" },
+                { name: "Farhan1", surname: "Madani1" },
+                { name: "Farhan2", surname: "Madani2" }
+            ];
+            $scope.userArray = users;
+        });
+    </script>
+</body>
+
+</html>

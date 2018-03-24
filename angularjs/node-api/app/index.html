@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./angular.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script src="./index.js"></script>
+    <title>AngularJS Documentation</title>
+</head>
+
+<body ng-app="basicApp" ng-controller="mainController">
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <!-- section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>ng-click</h4>
+                </div>
+                <div class="container-fluid">
+                    <h4>ng-click triggers when the mouse click something</h4>
+                    <input type="button" class="btn btn-danger" value="Click Me" ng-click="showAlert('ng-click')" />
+                </div>
+                <br />
+            </div>
+
+            <!-- Section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>ng-change</h4>
+                </div>
+                <div class="container-fluid">
+                    <h4>ng-change triggers when the option in select changes</h4>
+                    <select ng-model="valuetostore" class="form-control" ng-change="showAlert('ng-change')">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <br />
+            </div>
+
+            <!-- Section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>ng-focus</h4>
+                </div>
+                <div class="container-fluid">
+                    <h4>ng-focus triggers when the focus is changed using tab or mouse click</h4>
+                    <select class="form-control" ng-focus="markFocused('dropdown is Focused')">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <br />
+                    <input type="text" class="form-control" ng-focus="markFocused('input is Focused')">
+                </div>
+                <br />
+            </div>
+
+            <!-- Section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>ng-blur</h4>
+                </div>
+                <div class="container-fluid">
+                    <h4>ng-blur triggers when the filed is out of focus</h4>
+                    <input type="text" class="form-control" ng-blur="blurred()">
+                    <br>
+                    <select class="form-control" ng-blur="blurred()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <br />
+            </div>
+
+            <!-- Section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>ng-copy</h4>
+                </div>
+                <div class="container-fluid">
+                    <h4>ng-copy triggers when the user tries to copy the text using control c or right click</h4>
+                    <input type="text" class="form-control" ng-copy="showAlert('ng-copy')">
+                    <br>
+                </div>
+                <br />
+            </div>
+
+            <!-- Section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>ng-cut</h4>
+                </div>
+                <div class="container-fluid">
+                    <h4>ng-cut triggers when the user tries to cut the text using control x or right click</h4>
+                    <input type="text" class="form-control" ng-cut="showAlert('ng-cut')">
+                    <br>
+                </div>
+                <br />
+            </div>
+
+            <!-- Section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>ng-paste</h4>
+                </div>
+                <div class="container-fluid">
+                    <h4>ng-paste triggers when the user tries to paste the text using control v or right click</h4>
+                    <input type="text" class="form-control" ng-paste="showAlert('ng-paste')">
+                    <br>
+                </div>
+                <br />
+            </div>
+
+            <!-- section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>ng-dblclick</h4>
+                </div>
+                <div class="container-fluid">
+                    <h4>ng-dblclick triggers when the user double clicks</h4>
+                    <input type="button" class="btn btn-danger" value="Double Click Me" ng-dblclick="showAlert('ng-dblclick')" />
+                </div>
+                <br />
+            </div>
+
+            <!-- section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>Keyboard events</h4>
+                </div>
+                <div class="container-fluid">
+                    <h4>ng-keypress ng-keydown ng-keyup</h4>
+                    <ul>
+                        <li>ng-keypress triggers when a key is pressed, it does not recognise control alt shift</li>
+                        <li>ng-keydown triggers when a key is pressed</li>
+                        <li>ng-keyup triggers when a key is released</li>
+                    </ul>
+                    <p>{{KeyboardPosition}}</p>
+                    <input type="text" class="form-control" ng-keydown="KeyboardPosition = 'Key Down'" ng-keyup="KeyboardPosition = 'key up'">
+                    <br>
+                    <p>{{KeypressEvent}}</p>
+                    <input type="text" class="form-control" ng-keypress="KeypressEvent = 'Key pressed'" ng-keyup="KeypressEvent = 'Nothing pressed'">
+                </div>
+                <br />
+            </div>
+
+            <!-- section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>Mouse events</h4>
+                </div>
+                <div class="container-fluid">
+                    <h4>Mouse Events : ng-mousedown, ng-mouseup, ng-mouseenter, ng-mouseleave, ng-mousemove, ng-mouseover</h4>
+                    <div class="col-xs-6" ng-mousedown="mousedown = mousedown + 1">MouseDown : {{mousedown}}</div>
+                    <div class="col-xs-6" ng-mouseup="mouseup = mouseup + 1">MouseUp : {{mouseup}}</div>
+                    <div class="col-xs-6" ng-mouseenter="mouseenter = mouseenter + 1">MouseEnter : {{mouseenter}}</div>
+                    <div class="col-xs-6" ng-mouseleave="mouseleave = mouseleave + 1">MouseLeave : {{mouseleave}}</div>
+                    <div class="col-xs-6" ng-mousemove="mousemove = mousemove + 1">MouseMove : {{mousemove}}</div>
+                    <div class="col-xs-6" ng-mouseover="mouseover = mouseover + 1">MouseOver : {{mouseover}}</div>
+                </div>
+                <br />
+            </div>
+
+            <!-- section -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>ng-hide ng-if ng-show ng-model ng-class</h4>
+                </div>
+                <div class="container-fluid">
+                    <input type="checkbox" ng-model="checkbox1">
+                    <div ng-show="checkbox1">Checkbox1 is checked</div>
+                    <br>
+                    <input type="checkbox" ng-model="checkbox2">
+                    <div ng-hide="checkbox2">Show if Checkbox2 is unchecked</div>
+                    <br>
+                    <input type="checkbox" ng-model="checkbox3">
+                    <div ng-if="checkbox3">Show if Checkbox3 is checked + remove it from the dom if unchecked</div>
+                    <br>
+                    <div>Value of radiobutton is : {{radiobtnvalue}}</div>
+                    <input type="radio" ng-model="radiobtnvalue" value="success">
+                    <input type="radio" ng-model="radiobtnvalue" value="warning">
+                    <input type="radio" ng-model="radiobtnvalue" value="default">
+                    <h3>Class : <span class="btn" ng-class="{'btn-success': radiobtnvalue=='success', 'btn-warning': radiobtnvalue=='warning', 'btn-default':radiobtnvalue=='default'}">{{radiobtnvalue}}</span></h3>
+                </div>
+                <br />
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        app.controller("mainController", function ($scope) {
+            $scope.KeyboardPosition = '';
+            $scope.KeypressEvent = '';
+            $scope.showAlert = function (origin) {
+                alert("This alert was triggered by " + origin);
+            }
+            $scope.markFocused = function (text) {
+                setTimeout(function () {
+                    alert(text);
+                }, 5000);
+            }
+            $scope.blurred = function () {
+                alert("Out of Focus or blurred");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
