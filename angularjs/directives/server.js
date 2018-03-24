@@ -5,7 +5,7 @@ const express = require("express"),
     port = 3000;
 
 server.use(bodyParser.json());
-server.use(bodyParser.json({ type: 'serverlication/vdn.api+json' }));
+server.use(bodyParser.json({ type: 'application/vdn.api+json' }));
 server.use(express.static(__dirname + "/project"));
 
 server.get("/api/users", (req, res) => {
