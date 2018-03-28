@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="./dist/index.js"></script>
+    <title>Documentation of Directives</title>
+</head>
+
+<body ng-app="myApp" ng-controller="formsController">
+    <h1 class="text-center">Documentation of Directives</h1>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <document-section data-title="Element Test Directive">
+                <element-test></element-test>
+            </document-section>
+
+            <document-section data-title="Attribute Test Directive">
+                <div attribute-test></div>
+            </document-section>
+
+            <document-section data-title="Class Test Directive">
+                <div class="class-test"></div>
+            </document-section>
+
+            <document-section data-title="Comment Test Directive">
+                <!--directive: comment-test -->
+            </document-section>
+
+            <document-section data-title="template and templateUrl Test Directive">
+                <template-test></template-test>
+                <template-url-test></template-url-test>
+            </document-section>
+
+            <document-section data-title="Directive using scope from controller">
+                <div data-controller-scope></div>
+            </document-section>
+
+            <document-section data-title="Directive using IsolatedScope from controller">
+                <div data-isolated-scope></div>
+            </document-section>
+
+            <document-section data-title="Directive - using a form variable declared inside scope using = ">
+                <attribute-scope form="checkbox.cb3" title="dropdownArray[0].value"></attribute-scope>
+            </document-section>
+
+            <document-section data-title="Directive - using a form variable declared inside scope using @">
+                <at-attribute-scope form="checkbox.cb3" title="dropdownArray[0].value"></at-attribute-scope>
+            </document-section>
+
+            <document-section data-title="Directive using no-transclude">
+                <no-transclude>Main Text</no-transclude>
+            </document-section>
+
+            <document-section data-title="Directive using transclude">
+                <using-transclude>Main Text</using-transclude>
+            </document-section>
+
+            <document-section data-title="Directive using controller">
+                <controller-test count="5">Main Text</controller-test>
+            </document-section>
+
+            <document-section data-title="Directive using link and ocntroller">
+                <link-test user-count="120"></link-test>
+            </document-section>
+
+            <document-section data-title="Directive using compile">
+                <compile-test-one>
+                    <compile-test-two>
+                        {{level}}
+                    </compile-test-two>
+                </compile-test-one>
+            </document-section>
+
+        </div>
+</body>
+
+</html>
