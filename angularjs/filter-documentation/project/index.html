@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="./dist/index.js"></script>
+    <title>Documentation of Directives</title>
+</head>
+
+<body ng-app="app" ng-controller="filtersController">
+    <h1 class="text-center">Documentation of Directives</h1>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <document-section data-title="$filter">
+                Not Filtered : {{name}}
+                <br> Filtered uppercase : {{filteredNameUpper}}
+                <br> Filtered lowercase : {{filteredNamelower}}
+                <br> Filtered with | Filter : {{name | uppercase}}
+                <br> Amount : {{amount | currency:'$':0}}
+            </document-section>
+
+            <document-section data-title="Search">
+                Free Search:
+                <input type="text" ng-model="textToSearch.$">
+                <br>
+                <br> State Search:
+                <input type="text" ng-model="textToSearch.state">
+                <br>
+                <br> Name Search:
+                <input type="text" ng-model="textToSearch.name">
+                <br>
+                <br>
+                <div ng-repeat="item in data | filter:textToSearch">Name: {{item.name}} & State: {{item.state}}
+                    <br>
+                </div>
+            </document-section>
+
+            <document-section data-title="Using Sort">
+                <select ng-model="sortBy">
+                    <option value="name">Name</option>
+                    <option value="state">State</option>
+                </select>
+                <br>
+                <div ng-repeat="item in data | orderBy:sortBy">Name: {{item.name}} & State: {{item.state}}</div>
+            </document-section>
+
+            <document-section data-title="Using Sort">
+                <div ng-repeat="item in data">ID: {{item.id}} Name: {{item.name}} & State: {{item.state}}</div>
+                <br>
+                Filter Applied :
+                <div ng-repeat="item in data">ID: {{item.id | internalId}} Name: {{item.name}} & State: {{item.state}}</div>
+            </document-section>
+
+        </div>
+</body>
+
+</html>
