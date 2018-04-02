@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="./dist/index.js"></script>
+    <title>Promises</title>
+</head>
+
+<body ng-app="app" ng-controller="restController">
+    <h1 class="text-center">Documentation of Promises</h1>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">Promises - $http</div>
+                <div ng-repeat="item in data.users">Name: {{item.name}} & State: {{item.state}}</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">Handling Promises .then function</div>
+                <div ng-repeat="item in data.users">Name: {{item.name}} & State: {{item.state}}</div>
+                <p>{{process}}</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">Recieving data from service calling rest api</div>
+                <div ng-repeat="item in dataFromService.users">Name: {{item.name}} & State: {{item.state}}</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">Calling REST api with parameters</div>
+                <div>Name: {{singleUser.user.name}} & State: {{singleUser.user.state}} & ID: {{singleUser.user.id}}</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">Returning success promise using $q</div>
+                <div>Async Call Executed  : {{asyncCallExecutedSuccess}}</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">Returning error promise using $q</div>
+                <div>Async Call Executed : {{asyncCallExecutedError}}</div>
+            </div>
+        </div>
+</body>
+
+</html>
